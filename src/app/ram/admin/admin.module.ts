@@ -3,15 +3,16 @@ import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 
 
+import {ReactiveFormsModule, FormsModule  } from '@angular/forms';
 
-
-import { MyOrdersComponent } from './my-orders/my-orders.component';
-import { ManageOrdersComponent } from './manage-orders/manage-orders.component';
-import { ManageProductsComponent } from './manage-products/manage-products.component';
+import { MyOrdersComponent } from './components/my-orders/my-orders.component';
+import { ManageOrdersComponent } from './components/manage-orders/manage-orders.component';
+import { ManageProductsComponent } from './components/manage-products/manage-products.component';
 
 import { AuthService } from './service/auth.service';
 import { AuthGuardService } from './service/auth-guard.service';
 import { AdminAuthGuartService } from './service/admin-auth-guart.service';
+import { ProductFormComponent } from './components/product-form/product-form.component';
 
 
 
@@ -22,6 +23,8 @@ import { AdminAuthGuartService } from './service/admin-auth-guart.service';
 @NgModule({
   imports: [
     CommonModule,
+    ReactiveFormsModule,
+    FormsModule,
     RouterModule.forChild([
       { 
         path:'my/orders', 
@@ -34,6 +37,11 @@ import { AdminAuthGuartService } from './service/admin-auth-guart.service';
         canActivate:[AuthGuardService, AdminAuthGuartService] 
       },
       { 
+        path:'admin/products/new', 
+        component:ProductFormComponent,
+        canActivate:[AuthGuardService, AdminAuthGuartService] 
+      },
+      { 
         path:'admin/products', 
         component:ManageProductsComponent,
         canActivate:[AuthGuardService, AdminAuthGuartService] 
@@ -43,7 +51,7 @@ import { AdminAuthGuartService } from './service/admin-auth-guart.service';
   declarations: [
     MyOrdersComponent, 
     ManageOrdersComponent, 
-    ManageProductsComponent
+    ManageProductsComponent, ProductFormComponent
   ],
   providers: [
     AuthService, // for login logout service

@@ -2,13 +2,13 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 
-import { BsNavbarComponent } from './bs-navbar/bs-navbar.component';
-import { HomeComponent } from './home/home.component';
-import { AboutComponent } from './about/about.component';
-import { BsFooterComponent } from './bs-footer/bs-footer.component';
-import { ContactComponent } from './contact/contact.component';
-import { LoginComponent } from './login/login.component';
+import { BsNavbarComponent } from './components/bs-navbar/bs-navbar.component';
+import { HomeComponent } from './components/home/home.component';
+import { AboutComponent } from './components/about/about.component';
+import { BsFooterComponent } from './components/bs-footer/bs-footer.component';
+import { ContactComponent } from './components/contact/contact.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { LoginComponent } from './components/login/login.component';
 
 
 

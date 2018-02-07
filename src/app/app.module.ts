@@ -3,15 +3,17 @@ import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
 //import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 
+//import {ReactiveFormsModule, FormsModule  } from '@angular/forms';
+
 import { AngularFireModule } from 'angularfire2';
 import { AngularFireDatabaseModule } from 'angularfire2/database';
 import { AngularFireAuthModule } from 'angularfire2/auth';
 
 import { AppComponent } from './app.component';
-import { CoreModule } from './ram/core/components/core-module.module';
 import { AdminModule } from './ram/admin/admin.module';
 import { environment } from '../environments/environment';
 import { SharedModule } from './ram/shared/shared.module';
+import { CoreModule } from './ram/core/core-module.module';
 
 
 
@@ -24,6 +26,8 @@ import { SharedModule } from './ram/shared/shared.module';
     AngularFireModule.initializeApp(environment.firebase),
     AngularFireDatabaseModule,
     AngularFireAuthModule,
+  //  FormsModule,
+  //  ReactiveFormsModule,
     AdminModule,
     CoreModule,
     SharedModule,
